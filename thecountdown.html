@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Wedding Countdown</title>
+	<link rel="stylesheet" href="bootstrap-3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/flipclock.css">
+</head>
+<body>
+	<div class="container container-my background">
+		<div class="countdown-wrapper">
+			<div class="countdown"></div>
+			<span class="phrase-text">Tell me the date!</span>
+		</div>
+		<div>
+			<div class="phrase">
+				<span class="phrase-text text-size-large">Put some special word here</span>
+				<span class="phrase-text text-size-medium" style="font-family: EuphoriaRegular; font-size: 10px;">Countdown to destiny :P</span>
+			</div>
+			<div class="names">
+				<span class="phrase-text text-size-medium">Mr & Mrs ? XD</span>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="scripts/jquery-2.1.4.min.js"></script>
+	<script src="bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script src="scripts/flipclock.min.js"></script>	
+	<script type="text/javascript">
+		$(function(){
+			var currentDate  = new Date();
+			var futureDate = new Date("December 24, 2015 12:00:00");
+
+			var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+			clock = $('.countdown').FlipClock(diff, {
+				clockFace: 'DailyCounter',
+				countdown: true,
+			});
+		});
+	</script>
+</body>
+</html>
