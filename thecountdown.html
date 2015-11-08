@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Wedding Countdown</title>
+	<title>Amutha &amp; Tom Wedding</title>
 	<link rel="stylesheet" href="bootstrap-3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/flipclock.css">
@@ -161,6 +161,8 @@
 			});
 
 			$('.nav > li > a').on('click', function(evt){
+				evt.preventDefault();
+
 				var targetDiv = $(this).data('target');
 
 				// remove the active-div from all the child of content 
