@@ -1,3 +1,13 @@
+body
+{
+	font-family: EuphoriaRegular;
+}
+
+a:link, a:visited, a:hover, a:active
+{
+	text-decoration: none;
+}
+
 .container-my
 {
 	
@@ -125,6 +135,49 @@
 	margin: 0 auto;
 }
 
+.confirmation-wrapper
+{
+	text-align: center;
+}
+
+.confirmation-wrapper a
+{
+	width: 300px;
+	height: 100px;
+	font-size: 50px;
+
+	border-radius: 10px;
+}
+
+.attendance-cb
+{
+	color: white;
+}
+
+.attendance-cb:hover
+{
+	color: gray;
+}
+.attendance
+{
+	border-style: outset;
+
+	text-align: center;
+	font-size: 24px;
+}
+
+.attendance-reason
+{
+	display: block;
+}
+
+.attendance-reason-input
+{
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+}
+
 /*Flag*/
 
 .belgium-flag
@@ -171,6 +224,11 @@
 div.inn{
 	color: white!important;
 	background-color:lightgray!important;
+}
+
+.hidden-div
+{
+	display: none;
 }
 
 /*Fonts */
