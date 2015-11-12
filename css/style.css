@@ -20,7 +20,7 @@ a:link, a:visited, a:hover, a:active
 	/*background-image: url('../resources/images/loveEdited.jpg');*/
 	/*background-image: url('../resources/images/belmy.png');*/
 	background-image: url('../resources/images/flowersbg.jpg');
-	/*background-color: black;*/
+	background-image: url('../resources/images/velvetblack.jpg');
 	background-attachment: fixed;
 	background-size: 100% 100%;
 }
@@ -34,7 +34,7 @@ a:link, a:visited, a:hover, a:active
 
 	margin-bottom: 0;
 
-	width: 560px;
+	width: 565px;
     margin: 0 auto;
 	
 	color: white;
@@ -81,17 +81,21 @@ a:link, a:visited, a:hover, a:active
 	background-color: rgba(255, 255, 255, 0.0);
 	
 	width: 55%;
+
     margin: 0 auto;
+    padding-top: 25px;
 }
 
 .text-content
 {
 	font-family: EuphoriaRegular;
-	font-size: 36px;
+	font-size: 24px;
 	letter-spacing: 2px;
 
 	color: white;
 	text-shadow: 3px 2px black;
+
+
 }
 
 .text-content>span
@@ -102,27 +106,27 @@ a:link, a:visited, a:hover, a:active
 
     margin: 0 auto;
 
-    background-color: rgba(255, 255, 255, 0.4);
+    margin-top: 20px;
+	margin-bottom: 15px;
+    /*background-color: rgba(255, 255, 255, 0.4);*/
 }
 
 .wed-name
 {
-	font-size: 84px;
-	color: white;
-
-	display: block;
-
-	text-shadow: 2px 2px black;
-}
-
-.sub-text
-{
-    font-size: 34px;
+    font-size: 110px;
     color: white;
     
     display: block;
     
-    margin-top: -30px;
+    text-shadow: 2px 2px black;
+}
+
+.sub-text
+{
+    font-size: 40px;
+    color: white;
+    display: block;
+    
     text-shadow: 2px 2px black;
 }
 
@@ -169,6 +173,26 @@ a:link, a:visited, a:hover, a:active
 .attendance-reason
 {
 	display: block;
+}
+
+.attendance-reason-list
+{
+	font-size: 20px;
+}
+
+.attendance-reason-list ul
+{
+	list-style-type: none;
+}
+
+.attendance-attending
+{
+	text-align: right;
+}
+
+.attendance-notattending
+{
+	text-align: left;
 }
 
 .attendance-reason-input
