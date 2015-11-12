@@ -43,9 +43,16 @@ a:link, a:visited, a:hover, a:active
 	text-shadow: 2px 2px black;
 }
 
-.navbar-default .navbar-nav>li>a
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:visited
 {
 	color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:active
+{
+	color: #ccc;
 }
 
 .navbar-default .navbar-nav>li
@@ -186,14 +193,27 @@ a:link, a:visited, a:hover, a:active
 	margin-right: 50px;
 }
 
-.attendance-reason-list li
+.attendance-reason-list ul>li>a
 {
-	/*text-shadow: 1px 1px aqua;*/
+	color: white;
+}
+
+.attendance-reason-list ul>li>a:hover
+{
+	text-shadow: 2px 2px black;
+	text-decoration: underline;
 }
 
 .attendance-attending
 {
 	text-align: right;
+}
+
+.li-title
+{
+	font-size: 35px; 
+	margin-bottom: 10px; 
+	color: yellow;
 }
 
 .attendance-notattending

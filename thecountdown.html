@@ -107,30 +107,23 @@
 					<div class="row attendance-reason-list">
 						<div class="attendance-attending col-md-6 col-lg-6">
 							<ul>
-								<li style="font-size: 35px; margin-bottom: 10px; color: yellow;">Yes, I am attending!</li>
-								<li>Glad to attend. Love you both!</li>
-								<li>Glad to attend (I don't love you though)</li>
-								<li>Wait! You mean this was optional??</li>
-								<li>Two words... Free booze</li>
-								<li>I am fully aware that the "NO" option is a trap.</li>
-								<li>Cause I love Belgian chocolate</li>
+								<li class="li-title">Yes, I am attending.</li>
+								<li><a href="#">Glad to attend. Love you both!</a></li>
+								<li><a href="#">Glad to attend (I don't love you though).</a></li>
+								<li><a href="#">Wait! You mean this was optional??</a></li>
+								<li><a href="#">Two words... Free booze..</a></li>
+								<li><a href="#">I am fully aware that the "NO" option is a trap.</a></li>
+								<li><a href="#">Cause I love Belgian chocolate.</a></li>
 							</ul>
 						</div>
 						<div class="attendance-notattending col-md-6 col-lg-6">
-							<span style="font-size: 24px"></span>
 							<ul>
-								<li style="font-size: 35px; margin-bottom: 10px; color: yellow;">No, I am not attending</li>
-								<li>
-									Regretfully decline as I have other matters to attend to.
-								</li>
-								<li>My twice removed cousin's brother's mother's great grandfather died</li>
-								<li>
-									I will be visiting.. ermm.. Pakistan, yeah Pakistan. But it is a secret if you ask anyone, they will have no idea what you are talking about.
-								</li>
-								<li>I'm planning to be sick on that day!!</li>
-								<li>
-									Who are you and how did you get my email address! Leave me alone!
-								</li>
+								<li class="li-title">No, I am not attending</li>
+								<li><a href="#">Regretfully decline as I have other matters to attend to.</a></li>
+								<li><a href="#">My twice removed cousin's brother's mother's great grandfather died.</a></li>
+								<li><a href="#">I will be visiting.. ermm.. Pakistan, yeah Pakistan. But it is a secret if you ask anyone, they will have no idea what you are talking about.</a></li>
+								<li><a href="#">I'm planning to be sick on that day!!</a></li>
+								<li><a href="#">Who are you and how did you get my email address! Leave me alone!</a></li>
 							</ul>
 						</div>
 					</div>
@@ -189,13 +182,23 @@
 			$(".attendance-cb").colorbox({inline:true, width:"40%"});
 
 			// For email 
-			function sendEmail()
+
+			$('.attendance-attending ul>li').on('click', function(){ 
+				sendEmail("Meow", "sarkunan92@gmail.com", true, "Cause I love cats");
+				alert('sent');
+			});
+
+			$('.attendance-notattending ul>li').on('click', function(){ 
+				sendEmail();
+			});
+
+			function sendEmail(attendeeName, email, attendance, reason)
 			{
 				var post_data = {
-					'name'			: "",
-					'email_address' : "",
-					'attending'		: true,
-					'reason'		: "",
+					'name'			: attendeename,
+					'email_address' : email,
+					'attending'		: attendance,
+					'reason'		: reason,
 
 				}
 
