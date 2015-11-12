@@ -41,5 +41,9 @@
 
 	// $mail->AddAttachment($fileName);
 	$mail->send();
-
+	if(!$mail->Send()) {
+		echo 'Message could not be sent.';
+		echo 'Mailer Error: ' . $mail->ErrorInfo;
+		exit;
+	}
 ?>
