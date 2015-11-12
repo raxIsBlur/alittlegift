@@ -183,6 +183,12 @@ a:link, a:visited, a:hover, a:active
 .attendance-reason-list ul
 {
 	list-style-type: none;
+	margin-right: 50px;
+}
+
+.attendance-reason-list li
+{
+	/*text-shadow: 1px 1px aqua;*/
 }
 
 .attendance-attending
