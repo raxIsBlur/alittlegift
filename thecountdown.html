@@ -238,7 +238,7 @@
 			$('#submit_answer').on('click', function(){
 				if(validateChoices())
 				{
-					sendEmail($('#attendance_name').val(), $('#attendance_email').val(), $('#attendance_attendance').val(), $('#attendance_reason').val());
+					sendEmail($('#attendee_name').val(), $('#attendee_email').val(), $('#attendee_attendance').val(), $('#attendee_reason').val());
 				}
 				else
 				{
@@ -248,7 +248,6 @@
 
 			function sendEmail(attendeeName, email, attendance, reason)
 			{
-				console.log(attendeeName + " " + email + " " + attendance + " " + reason);
 				var post_data = {
 					'name'			: attendeeName,
 					'email_address' : email,
