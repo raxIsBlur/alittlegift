@@ -43,7 +43,7 @@ a:link, a:visited, a:hover, a:active
 	text-shadow: 2px 2px black;
 }
 
-.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a, 
 .navbar-default .navbar-nav>li>a:visited
 {
 	color: white;
@@ -250,7 +250,7 @@ a:link, a:visited, a:hover, a:active
 	border-radius: 2px;
 	color: white;
 	background-color: black;
-	
+
 }
 
 .attendee-info label,.attendee-info input,.attendee-info span
