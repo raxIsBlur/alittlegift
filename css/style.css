@@ -244,6 +244,34 @@ a:link, a:visited, a:hover, a:active
 	height: 125px;
 }
 
+.attendee-info
+{
+	text-align: center;
+	border-radius: 2px;
+}
+
+.attendee-info label,.attendee-info input,.attendee-info span
+{
+	width: 80%;
+	font-size: 24px;
+
+}
+.attendee-info span
+{
+	display: block;
+	margin: 0 auto;
+
+	color: red;
+
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.attendee-info input
+{
+	font-family: Lato;
+}
+
 /*Countdown timer*/
 
 .countdown-wrapper

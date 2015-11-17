@@ -14,7 +14,7 @@
 	$mail = new PHPMailer();
 	$mail -> CharSEt = 'UTF-8';
 
-	$body = $attendeeName.' will be '.$attendeeAttendance?'attending' : 'not attending'.' the wedding because '.$attendeeReason;
+	$body = $attendeeName.' will be '.($attendeeAttendance?'attending':'not attending').' the wedding because '.$attendeeReason;
 
 	$mail->IsSMTP();
 	$mail->Host = 'smtp.gmail.com';
@@ -34,7 +34,6 @@
 	$mail->Subject = 'Wedding Invitation';
 	$mail->MsgHTML($body);
 
-	$mail->AddAddress($receipientEmail, $receipientName);
 	$mail->AddAddress($senderEmail, $name); 
 
 	// $mail->AddAttachment($fileName);
@@ -47,6 +46,6 @@
 	}
 	else
 	{
-		echo 'Mail sent';
+		echo 'RSVP-ed!! YAYYY';
 	}
 ?>

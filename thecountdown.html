@@ -83,7 +83,7 @@
 						Lunch
 					</span> -->
 					<span style="font-size: 24px;">
-						Lunch: It's a secret but we promise there will be food <br />(Actually we are working on it and will let you know once the venue is confirmed).
+						Lunch: The Lust Bistro, Wieringstraat
 					</span>
 				</div>
 			</div>
@@ -108,22 +108,22 @@
 						<div class="attendance-attending col-md-6 col-lg-6">
 							<ul>
 								<li class="li-title">Yes, I am attending.</li>
-								<li><a href="#">Glad to attend. Love you both!</a></li>
-								<li><a href="#">Glad to attend (I don't love you though).</a></li>
-								<li><a href="#">Wait! You mean this was optional??</a></li>
-								<li><a href="#">Two words... Free booze..</a></li>
-								<li><a href="#">I am fully aware that the "NO" option is a trap.</a></li>
-								<li><a href="#">Cause I love Belgian chocolate.</a></li>
+								<li><a href="#attendee_info">Glad to attend. Love you both!</a></li>
+								<li><a href="#attendee_info">Glad to attend (I don't love you though).</a></li>
+								<li><a href="#attendee_info">Wait! You mean this was optional??</a></li>
+								<li><a href="#attendee_info">Two words... Free booze..</a></li>
+								<li><a href="#attendee_info">I am fully aware that the "NO" option is a trap.</a></li>
+								<li><a href="#attendee_info">Cause I love Belgian chocolate.</a></li>
 							</ul>
 						</div>
 						<div class="attendance-notattending col-md-6 col-lg-6">
 							<ul>
 								<li class="li-title">No, I am not attending</li>
-								<li><a href="#">Regretfully decline as I have other matters to attend to.</a></li>
-								<li><a href="#">My twice removed cousin's brother's mother's great grandfather died.</a></li>
-								<li><a href="#">I will be visiting.. ermm.. Pakistan, yeah Pakistan. But it is a secret if you ask anyone, they will have no idea what you are talking about.</a></li>
-								<li><a href="#">I'm planning to be sick on that day!!</a></li>
-								<li><a href="#">Who are you and how did you get my email address! Leave me alone!</a></li>
+								<li><a href="#attendee_info">Regretfully decline as I have other matters to attend to.</a></li>
+								<li><a href="#attendee_info">My twice removed cousin's brother's mother's great grandfather died.</a></li>
+								<li><a href="#attendee_info">I will be visiting.. ermm.. Pakistan, yeah Pakistan. But it is a secret if you ask anyone, they will have no idea what you are talking about.</a></li>
+								<li><a href="#attendee_info">I'm planning to be sick on that day!!</a></li>
+								<li><a href="#attendee_info">Who are you and how did you get my email address! Leave me alone!</a></li>
 							</ul>
 						</div>
 					</div>
@@ -138,6 +138,24 @@
 			</div>
 		</div>
 	</div>
+
+	<div style="display:none;">
+		<div class="attendee-info col-xs-12" id="attendee_info">
+			<label for="attendee-name">Name</label>
+			<input type="text" name="attendee-name" id="attendee_name">	
+			<label for="attendee-email">Email Address</label>
+			<input type="text" name="attendee-email" id="attendee_email">
+
+			<span>It better be a good reason!</span>
+
+			<input type="submit" id="submit_answer" value="Confirm My Attendance">
+
+			<input type="hidden" name="attendee-reason" id="attendee_reason" value="">
+			<input type="hidden" name="attendee-attendance" id="attendee_attendance" value="">
+
+		</div>
+	</div>
+
 
 	<script src="scripts/jquery-2.1.4.min.js"></script>
 	<script src="bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -179,16 +197,53 @@
 
 			// For Colorbox
 
-			$(".attendance-cb").colorbox({inline:true, width:"40%"});
+			$('.attendance-reason-list li>a').colorbox({ inline:true, width:"40%" });
 
-			$('.attendance-attending ul>li').on('click', function(){ 
-				
-				// sendEmail("Meow", "sarkunan92@gmail.com", true, "Cause I love cats");
+			$('.attendance-attending ul>li').on('click', function()
+			{ 
+				$('#attendee_reason').val($(this).children('a').html());
+				console.log($('#attendee_reason').val());
+				$('#attendee_attendance').val(true);
 				
 			});
 
-			$('.attendance-notattending ul>li').on('click', function(){ 
-				// sendEmail("Meow", "sarkunan92@gmail.com", false, "Cause I love cats");
+			$('.attendance-notattending ul>li').on('click', function()
+			{ 
+				$('#attendee_reason').val($(this).children('a').html());
+				console.log($('#attendee_reason').val());
+				$('#attendee_attendance').val(false);
+			});
+
+			// for the reason and etc 
+
+			function validateChoices(){
+				var emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+				if($("input[name=attendee-name]").val().length > 0 &&
+					$("input[name=attendee-email]").val().length > 0 &&
+					$("input[name=attendee-email]").val().match(emailReg))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+			validateChoices();
+			$('#attendee_name, #attendee_email').on('change', function(){
+				validateChoices();
+			});
+
+			$('#submit_answer').on('click', function(){
+				if(validateChoices())
+				{
+					sendEmail($('#attendance_name').val(), $('#attendance_email').val(), $('#attendance_attendance').val(), $('#attendance_reason').val());
+				}
+				else
+				{
+					alert('Check your name and email address again! Make sure its right and there!');
+				}
 			});
 
 			function sendEmail(attendeeName, email, attendance, reason)
@@ -206,7 +261,7 @@
 					url: "./mailer.php",
 					data: post_data,
 					success: function(data){
-						// alert(data)
+						alert(data)
 ;					}
 				});
 			}
