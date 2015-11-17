@@ -1,5 +1,6 @@
 <?php 
 	require('./lib/phpmailer/class.phpmailer.php');
+	require('./lib/phpmailer/class.smtp.php');
 
 	$attendeeName = $_POST['name'];
 	$attendeeEmail = $_POST['email_address'];
@@ -13,10 +14,7 @@
 	$mail = new PHPMailer();
 	$mail -> CharSEt = 'UTF-8';
 
-	$body = $attendeeName.
-	' will be '.
-	$attendeeAttendance?'attending' : 'not attending'.
-	' the wedding because '.$attendeeReason;
+	$body = $attendeeName.' will be '.$attendeeAttendance?'attending' : 'not attending'.' the wedding because '.$attendeeReason;
 
 	$mail->IsSMTP();
 	$mail->Host = 'smtp.gmail.com';
