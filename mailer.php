@@ -12,9 +12,9 @@
 	$name = 'Amutha Tom';
 
 	$mail = new PHPMailer();
-	$mail -> CharSEt = 'UTF-8';
+	$mail -> CharSet = 'UTF-8';
 
-	$body = $attendeeName . ' will be '.($attendeeAttendance?'attending':'not attending').' the wedding because '.$attendeeReason;
+	$body = $attendeeName . ' will be '.($attendeeAttendance?'attending':'not attending').' the wedding because '.$attendeeReason.'. Their email: '.$attendeeEmail;
 
 	$mail->IsSMTP();
 	$mail->Host = 'smtp.gmail.com';

@@ -197,7 +197,7 @@
 
 			// For Colorbox
 
-			$('.attendance-reason-list li>a').colorbox({ inline:true, width:"40%" });
+			$('.attendance-reason-list li>a').colorbox({ inline:true, width:"40%"});
 
 			$('.attendance-attending ul>li').on('click', function()
 			{ 
@@ -261,7 +261,7 @@
 					url: "./mailer.php",
 					data: post_data,
 					success: function(data){
-						alert(data)
+						$.colorbox.close();
 ;					}
 				});
 			}
