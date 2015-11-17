@@ -46,6 +46,6 @@
 	}
 	else
 	{
-		echo 'RSVP-ed!! YAYYY'.$attendeeName . ' ' . $attendeeEmail;
+		echo 'RSVP-ed!! YAYYY |'.$attendeeName . ' ' . $attendeeEmail;
 	}
 ?>

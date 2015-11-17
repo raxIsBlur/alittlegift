@@ -248,6 +248,7 @@
 
 			function sendEmail(attendeeName, email, attendance, reason)
 			{
+				console.log(attendeeName + " " + email + " " + attendance + " " + reason);
 				var post_data = {
 					'name'			: attendeeName,
 					'email_address' : email,
