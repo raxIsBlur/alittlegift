@@ -181,16 +181,14 @@
 
 			$(".attendance-cb").colorbox({inline:true, width:"40%"});
 
-			// For email 
-
 			$('.attendance-attending ul>li').on('click', function(){ 
-				console.log('sending');
-				sendEmail("Meow", "sarkunan92@gmail.com", true, "Cause I love cats");
-				console.log('sent');
+				
+				// sendEmail("Meow", "sarkunan92@gmail.com", true, "Cause I love cats");
+				
 			});
 
 			$('.attendance-notattending ul>li').on('click', function(){ 
-				sendEmail("Meow", "sarkunan92@gmail.com", false, "Cause I love cats");
+				// sendEmail("Meow", "sarkunan92@gmail.com", false, "Cause I love cats");
 			});
 
 			function sendEmail(attendeeName, email, attendance, reason)
@@ -208,8 +206,8 @@
 					url: "./mailer.php",
 					data: post_data,
 					success: function(data){
-						alert(data);
-					}
+						// alert(data)
+;					}
 				});
 			}
 		});
