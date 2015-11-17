@@ -38,8 +38,8 @@
 	$mail->AddAddress($senderEmail, $name); 
 
 	// $mail->AddAttachment($fileName);
-	$mail->send();
-	if(!$mail->Send()) {
+	// $mail->send();
+	if(!$mail->send()) {
 		// echo 'Message could not be sent.';
 		echo 'Mailer Error: ' . $mail->ErrorInfo;
 		

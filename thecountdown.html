@@ -184,12 +184,13 @@
 			// For email 
 
 			$('.attendance-attending ul>li').on('click', function(){ 
+				console.log('sending');
 				sendEmail("Meow", "sarkunan92@gmail.com", true, "Cause I love cats");
-				alert('sent');
+				console.log('sent');
 			});
 
 			$('.attendance-notattending ul>li').on('click', function(){ 
-				sendEmail();
+				sendEmail("Meow", "sarkunan92@gmail.com", false, "Cause I love cats");
 			});
 
 			function sendEmail(attendeeName, email, attendance, reason)
