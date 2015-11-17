@@ -196,6 +196,7 @@ a:link, a:visited, a:hover, a:active
 .attendance-reason-list ul>li>a
 {
 	color: white;
+	outline: none;
 }
 
 .attendance-reason-list ul>li>a:hover
