@@ -14,7 +14,7 @@
 	$mail = new PHPMailer();
 	$mail -> CharSet = 'UTF-8';
 
-	$body = $attendeeName . ' will be '.($attendeeAttendance?'attending':'not attending').' the wedding. \nReason: '.$attendeeReason.'. \nTheir email: '.$attendeeEmail;
+	$body = $attendeeName . ' will be '.($attendeeAttendance?'attending':'not attending').' the wedding. Reason: '.$attendeeReason.'. Their email: '.$attendeeEmail;
 
 	$mail->IsSMTP();
 	$mail->Host = 'smtp.gmail.com';
