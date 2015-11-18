@@ -167,7 +167,8 @@
 
 			// For flip clock 
 			var currentDate  = new Date();
-			var futureDate = new Date("January 23, 2016 12:00:00");
+			var futureDate = new Date(Date.UTC(2016, 0, 23, 11, 0, 0, 0));
+			// var futureDate = new Date("January 23, 2016 12:00:00");
 
 			var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
 
@@ -203,7 +204,7 @@
 			{ 
 				$('#attendee_reason').val($(this).children('a').html());
 				console.log($('#attendee_reason').val());
-				$('#attendee_attendance').val(true);
+				$('#attendee_attendance').val(1);
 				
 			});
 
@@ -211,7 +212,8 @@
 			{ 
 				$('#attendee_reason').val($(this).children('a').html());
 				console.log($('#attendee_reason').val());
-				$('#attendee_attendance').val(false);
+				$('#attendee_attendance').val(0);
+				console.log($('#attendee_attendance').val());
 			});
 
 			// for the reason and etc 
